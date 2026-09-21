@@ -32,22 +32,23 @@ export function AddHorseModal({ usersName }: AddHorseModalProps) {
 
   const handleSubmit = async (formData: FormData) => {
     setLoading(true);
-    try {
-      const horse: NewHorse = {
-        name: formData.get("name") as string,
-        birthDate: formData.get("birthDate") as string,
-        breed: formData.get("breed") as string,
-        coat: formData.get("coat") as string,
-        ownerId: formData.get("ownerId") as string,
-      };
-      await createHorse(horse);
+
+    const horse: NewHorse = {
+      name: formData.get("name") as string,
+      birthDate: formData.get("birthDate") as string,
+      breed: formData.get("breed") as string,
+      coat: formData.get("coat") as string,
+      height: formData.get("height"),
+      ownerId: formData.get("ownerId") as string,
+    };
+    const response = await createHorse(horse);
+    if (response.success) {
       toast.success("Cheval ajouté !");
       setOpen(false);
-    } catch (error) {
+    } else {
       toast.error("Impossible d'ajouter le cheval.");
-    } finally {
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   return (
@@ -84,6 +85,11 @@ export function AddHorseModal({ usersName }: AddHorseModalProps) {
           <div className="space-y-2">
             <Label htmlFor="owner">Robe</Label>
             <Input id="coat" name="coat" required placeholder="ex: Alezan" />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="height">Hauteur en cm (au garrot)</Label>
+            <Input type="number" id="height" name="height" />
           </div>
 
           <div className="space-y-2">

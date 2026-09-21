@@ -3,8 +3,9 @@
 import { createClient } from "@/lib/supabase/server";
 import { revalidatePath } from "next/cache";
 import { NewUser, User } from "@/lib/models/user";
+import { ResponseModel } from "@/lib/models/action";
 
-export async function getUsers(): Promise<User[]> {
+export async function getUsers(): Promise<ResponseModel<User[]>> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("profiles")
@@ -22,12 +23,13 @@ export async function getUsers(): Promise<User[]> {
     .eq("role", "USER");
   if (error) {
     console.error(error);
+    return { success: false };
   }
-  return data ?? [];
+  return { success: true, data: data ?? [] };
 }
 
 export async function getUsersName(): Promise<
-  { id: string; firstName: string; lastName: string }[]
+  ResponseModel<{ id: string; firstName: string; lastName: string }[]>
 > {
   const supabase = await createClient();
   const { data, error } = await supabase
@@ -37,22 +39,18 @@ export async function getUsersName(): Promise<
 
   if (error) {
     console.error(error);
-  }
-  return data ?? [];
-}
-
-export async function createUser(user: NewUser): Promise<{ success: boolean }> {
-  const supabase = await createClient();
-  const { error } = await supabase.from("profiles").insert(user);
-  if (error) {
-    console.error("Détails de l'erreur :", {
-      code: error.code,
-      message: error.message,
-      details: error.details,
-      hint: error.hint,
-    });
     return { success: false };
   }
-  revalidatePath("/");
-  return { success: true };
+  return { success: true, data: data ?? [] };
+}
+
+export async function createUser(user: NewUser): Promise<ResponseModel<User>> {
+  const supabase = await createClient();
+  const { data, error } = await supabase.from("profiles").insert(user);
+  if (error) {
+    console.error(error);
+    return { success: false };
+  }
+  revalidatePath("/dashboard/users");
+  return { success: true, data: data ?? undefined };
 }

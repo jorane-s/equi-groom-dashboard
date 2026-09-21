@@ -14,8 +14,6 @@ import { Label } from "@/components/ui/label";
 import { PlusCircle, Loader2, Text } from "lucide-react";
 import { createHorse } from "@/lib/supabase/actions/horse-actions";
 import { toast } from "sonner";
-import { Horse, NewHorse } from "@/lib/models/horse";
-import { Select } from "@/components/ui/select";
 import { NewUser } from "@/lib/models/user";
 import { createUser } from "@/lib/supabase/actions/user-actions";
 import { z } from "zod";

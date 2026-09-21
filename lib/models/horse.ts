@@ -5,6 +5,7 @@ export interface Horse {
   name: string;
   breed: string;
   coat: string;
+  height: number;
   birthDate: string;
   created_at: string;
   ownerId: string | null;
@@ -15,6 +16,7 @@ export interface NewHorse {
   name: string;
   breed: string;
   coat: string;
+  height: number;
   birthDate: string;
   ownerId: string | null;
 }

@@ -3,28 +3,29 @@
 import { Horse, NewHorse } from "@/lib/models/horse";
 import { createClient } from "@/lib/supabase/server";
 import { revalidatePath } from "next/cache";
+import { ResponseModel } from "@/lib/models/action";
 
-export async function getHorses(): Promise<Horse[]> {
+export async function getHorses(): Promise<ResponseModel<Horse[]>> {
   const supabase = await createClient();
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("horses")
     .select("*, owner:profiles(firstName, lastName)");
-  return data ?? [];
+
+  if (error) {
+    return { success: false };
+  }
+  return { success: true, data: data ?? [] };
 }
 
-export async function getHorsesById(id: number) {}
-
-export async function createHorse(horse: NewHorse) {
+export async function createHorse(
+  horse: NewHorse,
+): Promise<ResponseModel<Horse>> {
   const supabase = await createClient();
-  const { error } = await supabase.from("horses").insert(horse);
+  const { error, data } = await supabase.from("horses").insert(horse);
   if (error) {
-    console.error("Détails de l'erreur :", {
-      code: error.code,
-      message: error.message,
-      details: error.details,
-      hint: error.hint,
-    });
-    throw error;
+    console.error(error);
+    return { success: false };
   }
-  revalidatePath("/");
+  revalidatePath("/dashboard/horses");
+  return { success: true, data: data ?? undefined };
 }

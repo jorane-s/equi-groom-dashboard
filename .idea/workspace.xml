@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e04395f0-491c-4332-a883-9ae2cc4da99d" name="Changes" comment="feat(master): dashboard" />
+    <list default="true" id="e04395f0-491c-4332-a883-9ae2cc4da99d" name="Changes" comment="feat(main): dashboard">
+      <change afterPath="$PROJECT_DIR$/lib/models/action.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/horses/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/horses/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/add-horse-modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/add-horse-modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/add-profile-modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/add-profile-modal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ui/horse-table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/horse-table.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/horse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/horse.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/supabase/actions/horse-actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/supabase/actions/horse-actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/supabase/actions/user-actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/supabase/actions/user-actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/supabase/client.ts" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,10 +21,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "jorane-s"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/jorane-s/equi-groom-dashboard.git",
+    "accountId": "8471da3b-36d2-490a-aac2-28217199fa7a"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="3JKM8GSMKRr8YDjm3pf8pia0JK1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,7 +49,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
     "last_opened_file_path": "D:/Jorane/Documents/Git/equi-groom-dashboard/components",
     "node.js.detected.package.eslint": "true",
@@ -45,6 +68,7 @@
       <recent name="D:\Jorane\Documents\Git\equi-groom-dashboard\lib\supabase\actions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Jorane\Documents\Git\equi-groom-dashboard\components" />
       <recent name="D:\Jorane\Documents\Git\equi-groom-dashboard\app" />
       <recent name="D:\Jorane\Documents\Git\equi-groom-dashboard\app\dashboard" />
     </key>
@@ -64,6 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1789405146772</updated>
       <workItem from="1789405149093" duration="19169000" />
+      <workItem from="1789895652262" duration="6138000" />
     </task>
     <task id="LOCAL-00001" summary="feat(master): dashboard">
       <option name="closed" value="true" />
@@ -73,7 +98,15 @@
       <option name="project" value="LOCAL" />
       <updated>1789893708790</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat(main): dashboard">
+      <option name="closed" value="true" />
+      <created>1789895831868</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1789895831868</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,7 +124,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="feat(master): dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(master): dashboard" />
+    <MESSAGE value="feat(main): dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(main): dashboard" />
   </component>
 </project>
